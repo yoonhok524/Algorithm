@@ -13,7 +13,7 @@ fun main() {
     checkResult(result, 7)
 }
 
-fun generateArray(n: Int): IntArray {
+private fun generateArray(n: Int): IntArray {
     val list = mutableListOf<Int>()
     for (i in 0 until n step 2) {
         val randomNum = Random.nextInt(1, 1_000_000_001)

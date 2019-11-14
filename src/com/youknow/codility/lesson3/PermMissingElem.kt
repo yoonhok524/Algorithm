@@ -1,12 +1,14 @@
 package com.youknow.codility.lesson3
 
 fun main() {
+    val arr = (1..100_000).toList().toIntArray()
+
     val sTime = System.currentTimeMillis()
-    val result = solution(1, 5, 1)
+    val result = solution(arr)
     val eTime = System.currentTimeMillis()
     println("time: ${eTime - sTime} ms")
 
-    checkResult(result, 3)
+    checkResult(result, 4)
 }
 
 private fun checkResult(solution: Int, result: Int) {
@@ -17,12 +19,17 @@ private fun checkResult(solution: Int, result: Int) {
     }
 }
 
-fun solution(x: Int, y: Int, d: Int): Int {
-    val diff = y - x
-    val result = diff / d
-    return if (diff % d == 0) {
-        result
-    } else {
-        result + 1
+fun solution(a: IntArray): Int {
+    a.sort()
+
+    var count = 1
+    for (idx in 0 until a.size) {
+        if (count != a[idx]) {
+            return count
+        }
+
+        count++
     }
+
+    return count
 }
