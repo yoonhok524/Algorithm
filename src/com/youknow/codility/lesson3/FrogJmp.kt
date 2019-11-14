@@ -17,7 +17,7 @@ private fun checkResult(solution: Int, result: Int) {
     }
 }
 
-fun solution(x: Int, y: Int, d: Int): Int {
+private fun solution(x: Int, y: Int, d: Int): Int {
     val diff = y - x
     val result = diff / d
     return if (diff % d == 0) {

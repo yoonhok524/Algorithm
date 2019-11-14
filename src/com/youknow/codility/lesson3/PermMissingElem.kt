@@ -19,7 +19,7 @@ private fun checkResult(solution: Int, result: Int) {
     }
 }
 
-fun solution(a: IntArray): Int {
+private fun solution(a: IntArray): Int {
     a.sort()
 
     var count = 1
